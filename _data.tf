@@ -37,5 +37,6 @@ data "aws_kms_key" "efs" {
 }
 
 data "aws_ec2_managed_prefix_list" "s3" {
-  name = "com.amazonaws.${data.aws_region.current.name}.s3"
+  name = "${data.aws_region.current.name}.s3"
+  max_entries = 10
 }
